@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f7;
+    color: #ff69b4;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1, h2 {
+    font-size: 2.5em;
+    color: #ff1493;
+}
+
+.input-container, .loading-container, .happy-birthday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+input {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border-color: #ff1493;
+}
+
+#SubmitButton {
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+#errorMessage {
+    color: red;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.loading-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.progress-circle-container {
+    position: relative;
+    width: 200px; /* Increased size of the progress circle */
+    height: 200px; /* Increased size of the progress circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-circle {
+    transform: rotate(-90deg); /* Rotate to start from the top */
+}
+
+.progress-bg {
+    fill: none;
+    stroke: #ff69b4; /* Background color of the circle */
+    stroke-width: 10; /* Thickness of the circle */
+}
+
+.progress {
+    fill: none;
+    stroke: #ff1493; /* Color of the progress */
+    stroke-width: 10; /* Thickness of the progress */
+    stroke-linecap: round; /* Rounded edges for the progress */
+    transition: stroke-dasharray 0.5s ease; /* Smooth transition for progress */
+}
+
+.loading-image {
+    position: absolute; /* Keep it absolute to position over the circle */
+    width: 80px; /* Adjust the size of the image (make it bigger) */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) rotate(0deg); /* Center the image */
+    animation: spin 4s linear infinite; 
+    z-index: 10;/
+}
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+.happy-birthday {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in;
+}
+
+.animate-birthday {
+    animation: fadeIn 2s ease-in;
+}
+
+.video-holder {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid transparent; /* Make border transparent */
+    padding: 10px;
+    animation: colorChange 5s infinite alternate;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.8); /* Glow effect */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.video-holder video {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Match border radius */
+    box-shadow: none; /* No shadow on the video */
+}
+
+.download-button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #ff1493;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes colorChange {
+    0% { border-color: #ff69b4; }
+    50% { border-color: #ff1493; }
+    100% { border-color: #ff00ff; }
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
